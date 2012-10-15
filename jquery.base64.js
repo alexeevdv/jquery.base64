@@ -7,7 +7,7 @@
  *   http://www.gnu.org/licenses/gpl.html
  *
  * URL:
- *   http://alexeevdv.ru/jquery/base64/
+ *   http://alexeevdv.ru/projects/jquery/base64/
  *
  * Author URL:
  *   http://alexeevdv.ru/
