@@ -44,16 +44,16 @@
             decode: function(text) {
                 var decodedText = '';
                 for (var i = 0; i < text.length; i+=4) {
-                    byte1 = this.codeTable.indexOf(text[i]);
-                    byte2 = this.codeTable.indexOf(text[i+1]);
-                    byte3 = (text[i+2] !== "=" ? this.codeTable.indexOf(text[i+2]) : 0);
-                    byte4 = (text[i+3] !== "=" ? this.codeTable.indexOf(text[i+3]) : 0);
+                    var byte1 = this.codeTable.indexOf(text[i]);
+                    var byte2 = this.codeTable.indexOf(text[i+1]);
+                    var byte3 = (text[i+2] !== "=" ? this.codeTable.indexOf(text[i+2]) : 0);
+                    var byte4 = (text[i+3] !== "=" ? this.codeTable.indexOf(text[i+3]) : 0);
                 
-                    newByte1 = (byte1 << 2) | ((byte2 & 48) >> 4);
+                    var newByte1 = (byte1 << 2) | ((byte2 & 48) >> 4);
                     decodedText += (newByte1 ? String.fromCharCode(newByte1) : '' );
-                    newByte2 = ((byte2 & 15) << 4) | ((byte3 & 60) >> 2);
+                    var newByte2 = ((byte2 & 15) << 4) | ((byte3 & 60) >> 2);
                     decodedText += (newByte2 ? String.fromCharCode(newByte2) : '' );
-                    newByte3 = ((byte3 & 3) << 6) | (byte4 & 63);
+                    var newByte3 = ((byte3 & 3) << 6) | (byte4 & 63);
                     decodedText += (newByte3 ? String.fromCharCode(newByte3) : '' );
 
                 }
